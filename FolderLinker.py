@@ -8,7 +8,13 @@ except:
     import Tkinter as tk
     import filedialog, messagebox, END
 
-import pygubu
+try:
+    import pygubu
+except:
+    import sys
+    import subprocess
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'pygubu'])
+    import pygubu
 
 
 class FolderLinker:
