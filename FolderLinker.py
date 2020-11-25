@@ -127,7 +127,7 @@ class FolderLinker:
         elif self.mode == LinkMode.HARD:
             link_mode = "/H"
 
-        command = "mklink " + link_mode + " " + self.txtDestinationPath.get().replace("/","\\") + "\\" + self.txtFolderName.get()+ " "+  self.txtSourcePath.get().replace("/","\\")
+        command = "mklink " + link_mode + " \"" + self.txtDestinationPath.get().replace("/","\\") + "\\" + self.txtFolderName.get()+ "\" \""+  self.txtSourcePath.get().replace("/","\\") + "\""
         print(command)
         os.system(command)
 
